@@ -33,11 +33,12 @@ async function bootstrap() {
     'http://localhost:3000',
     'http://localhost:3001',
     'http://localhost:3002',
-    'http://localhost:3000',
+    'https://final-frontend-14150-production.up.railway.app',
   ];
 
   // Dodaj Railway URL jeśli jest dostępny (zmienne środowiskowe)
   if (process.env.RAILWAY_PUBLIC_DOMAIN) {
+    corsOrigins.push(`https://${process.env.RAILWAY_PUBLIC_DOMAIN}`);
     corsOrigins.push(`https://${process.env.RAILWAY_PUBLIC_DOMAIN}`);
   }
 
