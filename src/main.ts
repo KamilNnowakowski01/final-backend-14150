@@ -1,3 +1,9 @@
+// Polyfill dla Node.js crypto modułu (Railway compatibility)
+import crypto from 'crypto';
+if (!globalThis.crypto) {
+  globalThis.crypto = crypto as any;
+}
+
 import { NestFactory, Reflector } from '@nestjs/core';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { ClassSerializerInterceptor, ValidationPipe } from '@nestjs/common';
