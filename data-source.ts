@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import { DataSource } from 'typeorm';
 import { User } from './src/users/user.entity';
 import { Word } from './src/words/word.entity';
@@ -25,8 +26,6 @@ export const AppDataSource = new DataSource({
     Repetition,
   ],
   migrations: ['./migrations/*{.ts,.js}'],
-  synchronize: false,
+  synchronize: true,
   ssl: { rejectUnauthorized: false },
 });
-
-export default AppDataSource;
